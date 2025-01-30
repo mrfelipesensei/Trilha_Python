@@ -1,0 +1,44 @@
+Loops são usados para repetir blocos enquanto uma condição for verdadeira
+For - Quando sabemos quantas vezes queremos repetir algo
+While - Quando queremos repetir algo até que uma condição seja falsa
+
+O For percorre uma sequência (lista, string, range etc.)
+e executa o bloco de código para cada item
+
+Ex1 - Contando de 1 a 5 usando for
+
+for i in range(1,6):
+    print(i)
+
+-O range(1,6) gera os números 1,2,3,4,5
+(o 6 não é incluido)
+
+Ex2 - Iterando sobre uma string
+
+palavra = "Python"
+for letra in palavra:
+    print(letra)
+
+-O for percorre cada letra da palavra "Python"
+e imprime uma por uma.
+
+O While continua rodando enquanto a condição for True.
+
+Ex3: Contando até 5 com While
+
+num = 1
+while <= 5:
+    print(num)
+    num+= 1 #Incrementa num até que ele seja maior que 5
+
+-Enquanto num for menor ou igual a 5, o loop continuará
+
+Ex4 - Pedindo senha até ser correta
+
+senha = ""
+while senha != "1234":
+    senha = input("Digite a senha: ")
+
+print("Acesso permitido!")
+
+-O loop só para quando o usuário digitar "1234".
