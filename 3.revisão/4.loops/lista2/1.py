@@ -8,14 +8,18 @@ cont_impar = 0
 
 #enquanto o contador for menor que a quantidade, pede o número
 while contador < quantidade:
-    numero = int(input("Digite o número: "))
-    contador+=1 #incremento de iteração do contador
+    try:
+        numero = int(input("Digite o número: "))
+        contador+=1 #incremento de iteração do contador
 
-    if numero != 0: #Verifica se o número é diferente de zero
-        if numero % 2 == 0: #verifica se o número é par
-            cont_par+=1 #conta o número par
-        elif numero % 2 != 0: #verifica se o número é ímpar
-            cont_impar+=1 #conta o número ímpar
+        if numero != 0: #Verifica se o número é diferente de zero
+            if numero % 2 == 0: #verifica se o número é par
+                cont_par+=1 #conta o número par
+            elif numero % 2 != 0: #verifica se o número é ímpar
+                cont_impar+=1 #conta o número ímpar
+
+    except ValueError:
+        print("Entrada inválida. Digite um número inteiro.")
     
 print(f"A quantidade de pares é: {cont_par}")
 print(f"A quantidade de ímpares é: {cont_impar}")
