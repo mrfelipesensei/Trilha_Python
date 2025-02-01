@@ -4,8 +4,18 @@ num = 0
 tentativas = 0
 
 while num != sorteio and tentativas < 3:
-    num = int(input("Digite um número: "))
-    tentativas+=1
-    if num == sorteio:
-        print("Você ACERTOU!")
-        break
+    try:
+        num = int(input("Digite um número: "))
+        tentativas+=1 #incremento
+        if 1 <= num <= 10: #testando o palpite
+            if num > sorteio:
+                print("É menor")
+            elif num < sorteio:
+                print("É maior")
+
+        if num == sorteio:
+            print("Você ACERTOU!")
+            break
+    
+    except ValueError: #Tratamento de erros
+        print("Entrada Inválida. Digite um número inteiro. ")
