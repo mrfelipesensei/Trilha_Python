@@ -7,7 +7,7 @@ for numero in numeros:
         print(numero)
 '''
 
-numero_procurado = 13
+numero_procurado = int(input("Digite o número a ser procurado: "))
 
 #Variável para controlar se o número foi encontrado
 encontrado = False
