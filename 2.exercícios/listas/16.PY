@@ -15,9 +15,11 @@ numeros = []
 #Loop para pedir 5 números ao usuário
 for i in range(5):
     while True:
-        numero = int(input(f"Digite o {i+1}º número: "))
-        numeros.append(numero)
-        break
+        try:
+            numero = int(input(f"Digite o {i+1}º número: "))
+            numeros.append(numero)
+            break
+        except ValueError:
+            print("Entrada inválida. Digite um número inteiro.")
 
-
-print(numeros)
+print("Números digitados:",numeros)
