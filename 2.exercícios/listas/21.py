@@ -4,9 +4,12 @@ numeros = []
 
 for i in range(5):
     while True:
-        numero = int(input(f"Digite o {i+1}º número: "))
-        numeros.append(numero)
-        break
+            try:
+                numero = int(input(f"Digite o {i+1}º número: "))
+                numeros.append(numero)
+                break
+            except ValueError:
+                print("Entrada inválida. Digite um número inteiro.")
 
 '''
 for numero in numeros:
