@@ -11,14 +11,21 @@ estoque = {
 }
 
 #Peça ao usuário um nome de produto e verifique se ele está no estoque
-produto = str(input("Digite o nome do produto: "))
+while True:
+    try:
+        produto = str(input("Digite o nome do produto: "))
+        if not produto.isalpha(): #Verifica se o produto digitado são letras
+            raise ValueError("O nome do produto deve conter apenas letras.")
+        break
+    except ValueError as e:
+        print(f"Erro: {e}")
 
 '''
 for chave,valor in estoque.items():
     if produto == chave:
         print(f"{chave}: {valor}")
 '''
-
+#Verifica se o produto está no estoque
 if produto in estoque:
     quantidade = estoque[produto]
     print(f"{produto}: {quantidade}")
