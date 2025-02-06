@@ -16,7 +16,14 @@ else:
 
 animal = str(input("Digite um animal: "))
 
-if animais.count(animal) != 0:
-    print(f"{animal} está na tupla")
+animal_min = animal.lower() #Transforma tudo em minúsculo
+
+if animal_min.isalpha(): #Verifica se foi digitado apenas letras
+
+    if animais.count(animal_min) != 0: #Se a contagem do que foi digitado for != 0
+        print(f"{animal_min} está na tupla")
+    else:
+        print(f"{animal_min} não está na tupla")
+
 else:
-    print(f"{animal} não está na tupla")
+    print("Digite apenas letras.")
