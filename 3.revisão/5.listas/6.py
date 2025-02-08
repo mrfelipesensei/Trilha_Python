@@ -2,10 +2,13 @@
 numeros = []
 
 while True:
-    numero = int(input("Digite um número: "))
-    numeros.append(numero)
-    if numero == 0:
-        break
+    try:
+        numero = int(input("Digite um número: "))
+        numeros.append(numero)
+        if numero == 0:
+            break
+    except ValueError:
+        print("Valor inválido. Digite um número inteiro")
 
 '''
 soma = sum(numeros)
