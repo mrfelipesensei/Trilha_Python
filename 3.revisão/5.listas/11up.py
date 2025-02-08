@@ -5,13 +5,19 @@ palavras = []
 
 while True:
     palavra = input("Digite uma palavra: ").lower()
-    palavras.append(palavra)
 
     if palavra.lower() == "sair":
         break
 
+    if palavra.isalpha():
+        palavras.append(palavra)
+    else:
+        print("Valor inválido, a palavra deve conter apans letras.")
 
-palavras.remove("nazismo")
-palavras.remove("sair")
+palavra_proibida = "nazismo"
+
+#Remove TODAS as ocorrências da palavra proibida
+while palavra_proibida in palavras:
+    palavras.remove(palavra_proibida)
 
 print(palavras)
