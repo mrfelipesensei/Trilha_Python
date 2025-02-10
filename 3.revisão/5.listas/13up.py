@@ -17,7 +17,10 @@ while True:
 
 #Inicializamos as variáveis com um valor muito baixo
 maior = float('-inf')
-segundo_maior = ('-inf')
+segundo_maior = float('-inf')
+
+menor = float('-inf')
+segundo_menor = float('-inf')
 
 #Percorremos a lista para encontrar o maior e o segundo maior valor
 for num in lista:
@@ -27,6 +30,15 @@ for num in lista:
     elif segundo_maior < num < maior:
         segundo_maior = num #Atualiza o segundo maior
 
+    #Lógica para menor e segundo menor
+    if num < menor:
+        if num < menor:
+            segundo_menor = menor
+            menor = num
+        elif segundo_menor < num < menor:
+            segundo_menor = num
+        
+
 '''Se o número atual for maior que 'maior' - ele se tornará o novo maior 
 e o antigo/anterior maior vira segundo_maior'''
 '''Se o número estiver entre 'maior' e 'segundo_maior' ele então será de fato o segundo maior'''
@@ -34,5 +46,10 @@ e o antigo/anterior maior vira segundo_maior'''
 #Verificamos se encontramos um segundo maior válido
 segundo_maior = segundo_maior if segundo_maior != float('-inf') else None
 
+#Lógica para menor e segundo menor
+segundo_menor = segundo_menor if segundo_menor != float('-inf') else None
+
 print("O maior número será:",maior)
 print("O segundo maior número será:",segundo_maior)
+
+print("O menor será:",menor)
